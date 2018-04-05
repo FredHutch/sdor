@@ -4,6 +4,8 @@ import argparse
 from swiftclient.service import SwiftService, SwiftError
 from sys import argv
 
+# you will need to set up your environment for Swift access
+
 logging.basicConfig(level=logging.ERROR)
 logging.getLogger("requests").setLevel(logging.CRITICAL)
 logging.getLogger("swiftclient").setLevel(logging.CRITICAL)
