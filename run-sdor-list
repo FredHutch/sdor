@@ -1,0 +1,13 @@
+#!/bin/bash
+# run sdor and slack the results
+
+# Swift creds and slack url
+. /secrets/swift.env
+
+# run sdor on specified container, each empty directory object comes back with 'name'
+found=$(python /sdor.py $1 --list | grep -c "name")
+
+if [[ "$found" -gt "0" ]]
+then
+  curl -X POST --data-urlencode "payload={\"channel\": \"#alerts\", \"username\": \"webhookbot\", \"text\": \"sdor found $found empty directory objects in $1\"}" $SLACK_HOOK_URL
+fi
