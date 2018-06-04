@@ -1,0 +1,5 @@
+# legacy "V1.0" auth
+export ST_AUTH_VERSION="1.0"
+export ST_AUTH="auth"
+export ST_USER="user"
+export ST_KEY="key"
